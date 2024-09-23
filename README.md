@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -35,7 +36,7 @@
             font-weight: bold;
             color: #fff; /* لون الاسم */
             position: absolute;
-            top: 87%; /* موقع الاسم */
+            top: 86.2%; /* موقع الاسم */
             left: 50%;
             transform: translate(-50%, -50%);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* ظل للاسم */
@@ -63,7 +64,6 @@
             background-color: #357ab8; /* لون خلفية الزر عند التحويم */
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
@@ -75,23 +75,12 @@
 
 <input type="text" id="inputName" placeholder="اكتب اسمك">
 <button onclick="updateName()">عرض الاسم</button>
-<button onclick="downloadCard()">تحميل الصورة</button> <!-- زر لتحميل الصورة -->
 
 <script>
     // تحديث الاسم على البطاقة
     function updateName() {
         var name = document.getElementById('inputName').value;
         document.getElementById('name').textContent = name;
-    }
-
-    // تحميل البطاقة كصورة
-    function downloadCard() {
-        html2canvas(document.getElementById('card')).then(function(canvas) {
-            var link = document.createElement('a');
-            link.href = canvas.toDataURL('image/png'); // تحويل الصورة إلى صيغة PNG
-            link.download = 'بطاقة_تهنئة.png'; // اسم الملف
-            link.click(); // محاكاة نقرة لتحميل الصورة
-        });
     }
 </script>
 
